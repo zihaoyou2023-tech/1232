@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>幸福食光餐廳</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">幸福食光餐廳</div>
+        <nav>
+            <a href="#home">首頁</a>
+            <a href="#about">關於我們</a>
+            <a href="#menu">美味菜單</a>
+            <a href="#cart">購物車</a>
+            <a href="#info">營業資訊</a>
+            <a href="#contact">聯絡我們</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <p>用美食，收藏生活中的幸福</p>
+            <h1>幸福食光餐廳</h1>
+            <p>每一口美味，都是幸福的開始。</p>
+            <a href="#menu" class="btn">看看美味菜單</a>
+        </div>
+    </section>
+
+    <section id="about" class="section about">
+        <h2>關於我們</h2>
+        <p>
+            幸福食光餐廳希望透過新鮮食材與用心料理，
+            為每一位顧客帶來溫暖又美好的用餐體驗。
+            不論是與家人聚餐、和朋友相聚，
+            都能在這裡享受屬於自己的幸福時光。
+        </p>
+    </section>
+
+    <section id="menu" class="section">
+        <h2>美味菜單</h2>
+        <p class="section-description">挑選喜歡的餐點，加入購物車吧！</p>
+        <div class="menu-container">
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80" alt="義式披薩">
+                <div class="menu-content">
+                    <h3>義式披薩</h3><p>香濃起司搭配新鮮配料。</p>
+                    <span class="price">NT$ 250</span>
+                    <button class="btn add-to-cart" data-name="義式披薩" data-price="250">加入購物車</button>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=80" alt="日式拉麵">
+                <div class="menu-content">
+                    <h3>日式拉麵</h3><p>濃郁湯頭搭配彈牙麵條。</p>
+                    <span class="price">NT$ 180</span>
+                    <button class="btn add-to-cart" data-name="日式拉麵" data-price="180">加入購物車</button>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" alt="健康沙拉">
+                <div class="menu-content">
+                    <h3>健康沙拉</h3><p>新鮮蔬菜搭配特製醬汁。</p>
+                    <span class="price">NT$ 150</span>
+                    <button class="btn add-to-cart" data-name="健康沙拉" data-price="150">加入購物車</button>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80" alt="經典漢堡">
+                <div class="menu-content">
+                    <h3>經典漢堡</h3><p>多汁肉排搭配新鮮生菜。</p>
+                    <span class="price">NT$ 160</span>
+                    <button class="btn add-to-cart" data-name="經典漢堡" data-price="160">加入購物車</button>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=800&q=80" alt="義大利麵">
+                <div class="menu-content">
+                    <h3>義大利麵</h3><p>濃郁醬汁與香氣十足的麵條。</p>
+                    <span class="price">NT$ 200</span>
+                    <button class="btn add-to-cart" data-name="義大利麵" data-price="200">加入購物車</button>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=800&q=80" alt="甜甜圈">
+                <div class="menu-content">
+                    <h3>甜甜圈</h3><p>香甜鬆軟，為用餐畫下完美句點。</p>
+                    <span class="price">NT$ 80</span>
+                    <button class="btn add-to-cart" data-name="甜甜圈" data-price="80">加入購物車</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cart" class="section cart-section">
+        <h2>我的購物車</h2>
+        <div class="cart-box">
+            <ul id="cart-items"><li class="empty-cart">目前還沒有選擇餐點。</li></ul>
+            <div class="cart-total">總金額：<span id="total-price">NT$ 0</span></div>
+            <div class="cart-actions">
+                <button id="clear-cart" class="btn btn-secondary" type="button">清空購物車</button>
+                <button id="checkout" class="btn" type="button">確認訂購</button>
+            </div>
+            <p id="cart-message" class="message" aria-live="polite"></p>
+        </div>
+    </section>
+
+    <section id="info" class="section info-section">
+        <h2>營業資訊</h2>
+        <div class="info-container">
+            <div class="info-card">
+                <h3>營業時間</h3>
+                <p>星期二至星期日</p><p>上午 11:00－晚上 21:00</p><p>最後點餐時間：20:30</p>
+            </div>
+            <div class="info-card">
+                <h3>公休日</h3>
+                <p>每星期一公休</p><p>特殊節日營業時間將另行公告。</p>
+            </div>
+            <div class="info-card">
+                <h3>餐廳地址</h3>
+                <p>請在此填入餐廳實際地址。</p><p>歡迎蒞臨幸福食光餐廳！</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+        <h2>聯絡我們</h2>
+        <p>有任何問題或建議，歡迎填寫以下表單。</p>
+        <form id="contact-form">
+            <label for="customer-name">姓名</label>
+            <input type="text" id="customer-name" placeholder="請輸入姓名" required>
+            <label for="customer-email">Gmail 信箱</label>
+            <input type="email" id="customer-email" placeholder="example@gmail.com" required>
+            <small id="email-message" aria-live="polite"></small>
+            <label for="customer-message">留言內容</label>
+            <textarea id="customer-message" rows="5" placeholder="請輸入您的問題或建議" required></textarea>
+            <button type="submit" class="btn">使用 Gmail 寄送</button>
+            <p id="contact-message" class="message" aria-live="polite"></p>
+        </form>
+    </section>
+
+    <section id="ai-assistant">
+        <h2>🤖 幸福食光 AI 點餐助理</h2>
+        <p>不知道吃什麼嗎？讓 AI 根據本網站的菜單與營業資訊幫你推薦！</p>
+        <div id="ai-chat-box" aria-live="polite">
+            <p>AI：你好！我是幸福食光 AI 助理，可以幫你查詢網站上提供的餐點、價格及營業資訊。</p>
+        </div>
+        <form id="ai-chat-form">
+            <input type="text" id="ai-user-input" placeholder="例如：推薦我 200 元以內的餐點" required>
+            <button type="submit" id="ai-send-button">詢問 AI</button>
+        </form>
+        <p id="ai-status" aria-live="polite"></p>
+    </section>
+
+    <footer class="footer">
+        <p>© 2026 幸福食光餐廳｜用心料理，分享幸福</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

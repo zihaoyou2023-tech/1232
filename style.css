@@ -1,0 +1,219 @@
+/* 幸福食光餐廳｜日系質感設計：Forest Green × Cream × Caramel */
+:root {
+    --green: #244b38;
+    --green-dark: #193729;
+    --green-light: #e9f0e8;
+    --cream: #faf7f0;
+    --cream-dark: #f1eadf;
+    --brown: #9b6240;
+    --brown-dark: #75452d;
+    --gold: #d8b879;
+    --text: #40382f;
+    --muted: #62584e;
+    --white: #ffffff;
+    --shadow: 0 8px 28px rgba(47, 54, 43, 0.08);
+    --radius: 16px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+body {
+    font-family: "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+    line-height: 1.8; color: var(--text); background: var(--cream);
+}
+a { text-decoration: none; color: inherit; }
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+
+/* 導覽列 */
+.header {
+    width: 100%; min-height: 82px; padding: 15px 6%;
+    display: flex; justify-content: space-between; align-items: center; gap: 25px;
+    background: var(--green); color: white; position: sticky; top: 0; z-index: 1000;
+    box-shadow: 0 3px 18px rgba(0,0,0,.12);
+}
+.logo { font-size: 25px; font-weight: 800; color: var(--gold); white-space: nowrap; letter-spacing: 2px; }
+.header nav { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px 23px; }
+.header nav a { font-size: 14px; font-weight: 500; color: #f4f0e8; transition: .3s; position: relative; }
+.header nav a::after {
+    content: ""; position: absolute; left: 0; bottom: -5px; width: 0; height: 2px;
+    background: var(--gold); transition: width .3s;
+}
+.header nav a:hover { color: var(--gold); }
+.header nav a:hover::after { width: 100%; }
+
+/* 首頁主視覺 */
+.hero {
+    min-height: 680px; display: flex; justify-content: center; align-items: center;
+    text-align: center; padding: 70px 20px; color: white;
+    background: linear-gradient(rgba(20,35,26,.45), rgba(20,35,26,.65)),
+      url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1920&q=85") center/cover no-repeat;
+}
+.hero-content { max-width: 900px; width: 100%; animation: fadeUp 1s ease; }
+.hero-content h1 { font-size: clamp(42px,7vw,76px); letter-spacing: 8px; margin: 18px 0; font-weight: 800; }
+.hero-content p { font-size: 19px; margin-bottom: 15px; letter-spacing: 2px; }
+.hero-content .btn { margin-top: 25px; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
+
+/* 共用按鈕與區塊 */
+.btn {
+    display: inline-block; border: 1px solid var(--brown-dark); border-radius: 8px;
+    padding: 12px 26px; margin-top: 12px; background: var(--brown); color: white;
+    font-weight: 600; letter-spacing: 1px; transition: .3s;
+}
+.btn:hover { background: var(--brown-dark); transform: translateY(-3px); box-shadow: 0 6px 16px rgba(155,98,64,.22); }
+.btn-secondary { background: #888077; }
+.btn-secondary:hover { background: #625b53; }
+.section { padding: 85px 7%; text-align: center; border-bottom: 1px solid #d8cbbb; }
+.section h1, .section h2 {
+    color: var(--green); font-size: 36px; font-weight: 800;
+    margin-bottom: 18px; letter-spacing: 2px;
+}
+.section h1::after, .section h2::after {
+    content: ""; display: block; width: 55px; height: 3px;
+    margin: 15px auto 0; background: var(--gold); border-radius: 5px;
+}
+.section-description { color: var(--muted); margin-bottom: 30px; }
+
+/* 關於我們 */
+.about { background: var(--white); }
+.about p { max-width: 850px; margin: 25px auto 0; font-size: 17px; line-height: 2.3; color: var(--muted); }
+
+/* 菜單 */
+.menu-container {
+    display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 30px;
+    max-width: 1200px; margin: 40px auto 0; text-align: left;
+}
+.menu-card {
+    overflow: hidden; background: white; border: 2px solid #e0d2c1;
+    border-radius: var(--radius); box-shadow: 0 5px 18px rgba(40,45,35,.13);
+    transition: transform .35s, box-shadow .35s;
+}
+.menu-card:hover { transform: translateY(-8px); border-color: #a87950; box-shadow: 0 10px 25px rgba(40,45,35,.2); }
+.menu-card img { display: block; width: 100%; height: 235px; object-fit: cover; transition: transform .5s; }
+.menu-card:hover img { transform: scale(1.05); }
+.menu-content { padding: 24px; }
+.menu-content h3 { font-size: 22px; color: var(--green); margin-bottom: 8px; }
+.menu-content p { color: var(--muted); min-height: 55px; font-size: 15px; }
+.price { display: block; margin-top: 15px; font-size: 23px; font-weight: 800; color: var(--brown); }
+.menu-content .btn { width: 100%; margin-top: 18px; }
+
+/* 購物車 */
+.cart-section { background: var(--cream-dark); }
+.cart-box {
+    max-width: 850px; margin: 35px auto 0; padding: 35px; background: white;
+    border: 2px solid #d8c6b1; border-radius: var(--radius);
+    box-shadow: 0 6px 22px rgba(40,45,35,.12); text-align: left;
+}
+#cart-items { list-style: none; }
+#cart-items li {
+    display: flex; align-items: center; justify-content: space-between; gap: 15px;
+    padding: 18px 5px; border-bottom: 1px solid #d5c8b9;
+}
+#cart-items .empty-cart { justify-content: center; color: var(--muted); }
+.cart-item-name { flex: 1; }
+.cart-item-price { font-weight: bold; color: var(--brown); }
+.remove-item { border: none; border-radius: 6px; padding: 7px 13px; color: white; background: #b65d50; transition: .3s; }
+.remove-item:hover { background: #903c33; }
+.cart-total { margin-top: 25px; text-align: right; font-size: 27px; font-weight: 800; color: var(--green); }
+.cart-actions { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+.message { margin-top: 15px; color: #397345; overflow-wrap: anywhere; }
+
+/* 營業資訊 */
+.info-section { background: var(--cream); }
+.info-container {
+    display: grid; grid-template-columns: repeat(3,minmax(0,1fr));
+    gap: 25px; max-width: 1150px; margin: 40px auto 0;
+}
+.info-card {
+    padding: 35px 22px; background: white; border: 2px solid #ded0be;
+    border-radius: var(--radius); box-shadow: 0 5px 18px rgba(40,45,35,.12); transition: .3s;
+}
+.info-card:hover { transform: translateY(-5px); }
+.info-card h3 { margin-bottom: 18px; color: var(--brown); font-size: 22px; }
+.info-card p { color: var(--muted); font-size: 15px; }
+
+/* 聯絡我們 */
+.contact-section { background: white; }
+#contact-form {
+    display: flex; flex-direction: column; gap: 12px;
+    max-width: 650px; margin: 35px auto 0; text-align: left;
+}
+#contact-form label { font-weight: 700; color: var(--green); margin-top: 8px; }
+#contact-form input, #contact-form textarea {
+    width: 100%; padding: 14px 16px; border: 2px solid #b9a995;
+    border-radius: 9px; background: white; color: #30291f; outline: none; transition: .3s;
+}
+#contact-form input:focus, #contact-form textarea:focus {
+    border-color: #386448; box-shadow: 0 0 0 3px rgba(56,100,72,.18);
+}
+#contact-form textarea { resize: vertical; }
+#contact-form small { min-height: 20px; color: #b33c32; }
+#contact-form .btn { align-self: flex-start; }
+
+/* AI 客服 */
+#ai-assistant {
+    max-width: 850px; margin: 65px auto; padding: 35px; background: white;
+    border: 2px solid #cbbb9f; border-radius: 20px;
+    box-shadow: 0 8px 28px rgba(40,45,35,.15);
+}
+#ai-assistant h1, #ai-assistant h2 { color: var(--green); margin-bottom: 10px; }
+#ai-assistant > p { color: var(--muted); margin-bottom: 20px; }
+#ai-chat-box {
+    height: 380px; overflow-y: auto; padding: 20px; background: #f0ece3;
+    border: 2px solid #c8bba8; border-radius: 14px; margin-bottom: 20px;
+}
+#ai-chat-box p {
+    max-width: 85%; width: fit-content; padding: 12px 17px; margin: 12px 0;
+    border: 1px solid #c7d4c5; border-radius: 13px;
+    background: #e1ecdf; color: var(--green-dark); overflow-wrap: anywhere; white-space: pre-wrap;
+}
+#ai-chat-box .user-message { margin-left: auto; background: var(--green); border-color: var(--green-dark); color: white; }
+#ai-chat-form { display: flex; gap: 12px; }
+#ai-user-input {
+    flex: 1; min-width: 0; padding: 14px 16px; border: 2px solid #b9a995;
+    border-radius: 10px; background: white; outline: none;
+}
+#ai-user-input:focus { border-color: #386448; box-shadow: 0 0 0 3px rgba(56,100,72,.18); }
+#ai-send-button {
+    padding: 12px 23px; background: var(--green); color: white; border: 1px solid var(--green-dark);
+    border-radius: 10px; font-weight: bold; transition: .3s;
+}
+#ai-send-button:hover { background: var(--green-dark); }
+#ai-send-button:disabled { opacity: .5; cursor: not-allowed; }
+#ai-status { margin-top: 12px; color: var(--brown); font-size: 14px; }
+
+/* 頁尾 */
+.footer { padding: 30px 15px; text-align: center; background: var(--green-dark); color: #eee7d8; font-size: 14px; letter-spacing: 1px; }
+
+/* 平板 */
+@media (max-width: 900px) {
+    .header { flex-direction: column; padding: 18px; }
+    .header nav { gap: 10px 17px; }
+    .menu-container { grid-template-columns: repeat(2,minmax(0,1fr)); }
+    .info-container { grid-template-columns: 1fr; }
+    .hero { min-height: 600px; }
+}
+/* 手機 */
+@media (max-width: 480px) {
+    .logo { font-size: 22px; }
+    .header nav { gap: 8px 12px; }
+    .header nav a { font-size: 13px; }
+    .hero { min-height: 550px; }
+    .hero-content h1 { font-size: 38px; letter-spacing: 3px; }
+    .hero-content p { font-size: 16px; }
+    .section { padding: 55px 5%; }
+    .section h1, .section h2 { font-size: 29px; }
+    .menu-container { grid-template-columns: 1fr; gap: 22px; }
+    .menu-card img { height: 240px; }
+    .cart-box { padding: 20px; }
+    #cart-items li { flex-wrap: wrap; }
+    .cart-total { font-size: 22px; }
+    .cart-actions { flex-direction: column; }
+    .cart-actions .btn { width: 100%; }
+    #ai-assistant { margin: 25px 12px; padding: 20px 15px; }
+    #ai-chat-box { height: 350px; padding: 12px; }
+    #ai-chat-form { flex-direction: column; }
+    #ai-user-input, #ai-send-button { width: 100%; }
+    #contact-form .btn { width: 100%; }
+}
+
