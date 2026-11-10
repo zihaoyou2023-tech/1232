@@ -5,6 +5,7 @@ import { ref, computed, nextTick } from 'vue'
 import MenuCard from './components/MenuCard.vue'
 import InfoCard from './components/InfoCard.vue'
 import SectionLayout from './components/SectionLayout.vue'
+import HolidayChecker from './components/HolidayChecker.vue'
 
 // =====================================
 // 1. 原本的六道餐點
@@ -558,6 +559,10 @@ async function sendAIMessage() {
       </SectionLayout>
 
       <!-- 聯絡我們 -->
+      <!-- 今天放不放假 -->
+<section id="holiday">
+  <HolidayChecker />
+</section>
       <SectionLayout
         section-id="contact"
         extra-class="contact-section"
